@@ -9,4 +9,4 @@ oidc_test:
         MY_OIDC_TOKEN:
             aud: https://gitlab.com
     script:
-        - aws sts get-caller-identity
+        - sts get-caller-identity
