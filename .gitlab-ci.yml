@@ -1,0 +1,12 @@
+variables:
+    AWS_DEFAULT_REGION: "us-east-1"
+    AWS_PROFILE: "oidc"
+
+oidc_test:
+    image:
+        name: amazon/aws-cli:latest
+    id_tokens:
+        MY_OIDC_TOKEN:
+            aud: https://gitlab.com
+    script:
+        - aws sts get-caller-identity
