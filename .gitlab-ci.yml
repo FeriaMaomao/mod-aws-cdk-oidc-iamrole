@@ -30,3 +30,4 @@ assume role:
           --query 'Credentials.[AccessKeyId,SecretAccessKey,SessionToken]'
           --output text))
         - aws sts get-caller-identity
+        - aws s3 ls
