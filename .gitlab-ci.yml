@@ -5,8 +5,9 @@ variables:
 oidc_test:
     image:
         name: amazon/aws-cli:latest
+    entrypoint: [""]
     id_tokens:
         MY_OIDC_TOKEN:
             aud: https://gitlab.com
     script:
-        - sts get-caller-identity
+        - aws --version
