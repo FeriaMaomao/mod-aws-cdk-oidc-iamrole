@@ -12,6 +12,7 @@ oidc_test:
     script:
         - apk add aws-cli
         - aws sts get-caller-identity
+        - aws s3 ls
 
 # assume role:
 #     image:
