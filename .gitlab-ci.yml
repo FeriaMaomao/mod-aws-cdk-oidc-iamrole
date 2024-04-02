@@ -31,3 +31,4 @@ assume role:
           --output text))
         - aws sts get-caller-identity
         - aws s3 ls
+        - aws s3 rb s3://elasticbeanstalk-us-east-1-811658952076 --force
