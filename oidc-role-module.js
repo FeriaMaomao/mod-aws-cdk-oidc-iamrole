@@ -1,17 +1,9 @@
-import * as cdk from '@aws-cdk/core';
-import * as iam from '@aws-cdk/aws-iam';
+const cdk = require('@aws-cdk/core');
+const iam = require('@aws-cdk/aws-iam');
 
 // Parameter to IAM Role
-interface OIDCModuleProps {
-  roleName: string;
-  description: string;
-  policyName: string;
-  actions: string[];
-  resources: string[];
-}
-
-export class OIDCModule extends cdk.Construct {
-  constructor(scope: cdk.Construct, id: string, props: OIDCModuleProps) {
+class OIDCModule extends cdk.Construct {
+  constructor(scope, id, props) {
     super(scope, id);
 
     // Create an OIDC Identity Provider
@@ -45,3 +37,5 @@ export class OIDCModule extends cdk.Construct {
     role.attachInlinePolicy(policy);
   }
 }
+
+module.exports = { OIDCModule };
