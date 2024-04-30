@@ -18,7 +18,7 @@
 
 ## Diagram
 
-![](./images/design.png)
+![](./images/IAM%20Roles.png)
 
 ## Prerequisites
 
@@ -28,6 +28,7 @@ You will need the following things properly installed on your computer.
 - [Node](https://nodejs.org/en/download)
 - [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - [CDK](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_install)
+- [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
 
 ## Requirements
 
@@ -66,21 +67,23 @@ You will need the following things properly installed on your computer.
 ### Basic Invocation Example
 
 ```CDK
+Add in package.json
 
-import * as cdk from '@aws-cdk/core';
-import * as iam from '@aws-cdk/aws-iam';
-import { OIDCModule } from 'https://gitlab.com';
+"dependencies": {
+    "@aws-cdk/aws-iam": "^1.204.0",
+    "@aws-cdk/core": "^1.204.0",
+    "aws-cdk-lib": "2.138.0",
+    "OIDCModule": "gitlab:mauriciogonzalezferia/test-oidc#master"
+  }
 
-interface MyStackProps extends cdk.StackProps {
-  roleName: string;
-  description: string;
-  policyName: string;
-  actions: string[];
-  resources: string[];
-}
+#################################################################
 
-export class CdkRoleStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+const cdk = require('@aws-cdk/core');
+const iam = require('@aws-cdk/aws-iam');
+const { OIDCModule } = require('OIDCModule/oidc-role-module');
+
+class CdkRoleStack extends cdk.Stack {
+  constructor(scope, id, props) {
     super(scope, id, props);
 
     // Create Role
@@ -93,6 +96,8 @@ export class CdkRoleStack extends cdk.Stack {
     });
   }
 }
+
+module.exports = { CdkRoleStack };
 
 ```
 
