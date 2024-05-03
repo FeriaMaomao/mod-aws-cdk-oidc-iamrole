@@ -1,5 +1,5 @@
-import * as cdk from '@aws-cdk/core';
-import * as iam from '@aws-cdk/aws-iam';
+import * as cdk from 'aws-cdk-lib';
+import * as iam from 'aws-cdk-lib/aws-iam';
 
 // Parameter to IAM Role
 interface OIDCModuleProps {

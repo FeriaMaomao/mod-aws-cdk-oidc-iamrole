@@ -1,5 +1,5 @@
-const cdk = require('@aws-cdk/core');
-const iam = require('@aws-cdk/aws-iam');
+const cdk = require('aws-cdk-lib');
+const iam = require('aws-cdk-lib/aws-iam');
 
 const OIDCModuleProps = {
   roleName: '',
