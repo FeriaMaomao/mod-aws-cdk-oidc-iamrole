@@ -1,4 +1,4 @@
-# devsecops-mod-aws-cdk-oidc-iamrole
+# mod-aws-cdk-oidc-iamrole
 
 [![CDK](https://img.shields.io/badge/CDK-2.138.0-yellow)](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html)
 
@@ -6,7 +6,7 @@
 >
 > ## Table of Contents
 
-- [devsecops-mod-aws-iam-roles](#devsecops-mod-aws-iam-roles)
+- [mod-aws-cdk-oidc-iamrole](#mod-aws-cdk-oidc-iamrole
   - [Table of Contents](#Table-of-Contents)
   - [Diagram](#Diagram)
   - [Prerequisites](#Prerequisites)
@@ -70,16 +70,14 @@ You will need the following things properly installed on your computer.
 Add in package.json
 
 "dependencies": {
-    "@aws-cdk/aws-iam": "^1.204.0",
-    "@aws-cdk/core": "^1.204.0",
     "aws-cdk-lib": "2.138.0",
     "OIDCModule": "gitlab:mauriciogonzalezferia/mod-aws-cdk-oidc-iamrole"
   }
 
 #################################################################
 
-const cdk = require('@aws-cdk/core');
-const iam = require('@aws-cdk/aws-iam');
+const cdk = require('aws-cdk-lib');
+const iam = require('aws-cdk-lib/aws-iam');
 const { OIDCModule } = require('OIDCModule/oidc-role-module');
 
 class CdkRoleStack extends cdk.Stack {
