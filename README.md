@@ -6,7 +6,7 @@
 >
 > ## Table of Contents
 
-- [mod-aws-cdk-oidc-iamrole](#mod-aws-cdk-oidc-iamrole
+- [mod-aws-cdk-oidc-iamrole](#mod-aws-cdk-oidc-iamrole)
   - [Table of Contents](#Table-of-Contents)
   - [Diagram](#Diagram)
   - [Prerequisites](#Prerequisites)
