@@ -19,8 +19,7 @@
     "ts-node": "^10.9.2"
   },
   "dependencies": {
-    "aws-cdk-lib": "latest",
-    "constructs": "latest",
-    "source-map-support": "latest"
+    "aws-cdk-lib": "^2.140.0",
+    "constructs": "latest"
   }
 }

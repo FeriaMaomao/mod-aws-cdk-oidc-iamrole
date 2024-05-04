@@ -1,5 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
+import * as Construct from 'constructs';
 
 // Parameter to IAM Role
 interface OIDCModuleProps {

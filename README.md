@@ -71,6 +71,7 @@ Add in package.json
 
 "dependencies": {
     "aws-cdk-lib": "2.138.0",
+    "constructs": "latest",
     "OIDCModule": "gitlab:mauriciogonzalezferia/mod-aws-cdk-oidc-iamrole"
   }
 
@@ -80,17 +81,19 @@ const cdk = require('aws-cdk-lib');
 const iam = require('aws-cdk-lib/aws-iam');
 const { OIDCModule } = require('OIDCModule/oidc-role-module');
 
+// Your Custom Stack
 class CdkRoleStack extends cdk.Stack {
   constructor(scope, id, props) {
     super(scope, id, props);
 
+    // Inside of your custom stack
     // Create Role
     new OIDCModule(this, 'OIDCModule', {
-      roleName: 'Test-Role',
-      description: 'Test Role by Module',
-      policyName: 'Policy-Test-Role',
-      actions: ['sts:AssumeRole', 's3:*'],
-      resources: ['*']
+      roleName: 'Test-Role',    // Custom Role Name
+      description: 'Test Role by Module',    // Custom Description to Role
+      policyName: 'Policy-Test-Role',    // Custom Policy Name
+      actions: ['sts:AssumeRole', 's3:*'],     // Allow Actions
+      resources: ['*']     // Allow on Resources or Services
     });
   }
 }

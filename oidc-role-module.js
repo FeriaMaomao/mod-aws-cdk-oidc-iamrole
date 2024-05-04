@@ -1,5 +1,6 @@
 const cdk = require('aws-cdk-lib');
 const iam = require('aws-cdk-lib/aws-iam');
+const { Construct } = require('constructs');
 
 const OIDCModuleProps = {
   roleName: '',
@@ -10,7 +11,7 @@ const OIDCModuleProps = {
 };
 
 // Parameter to IAM Role
-class OIDCModule extends cdk.Construct {
+class OIDCModule extends Construct {
   constructor(scope, id, props) {
     super(scope, id);
 
